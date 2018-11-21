@@ -1,0 +1,51 @@
+#index{
+	text-align: center;
+
+	section{
+		padding: 40px 0;
+
+		@include desktop{
+			padding: 60px 0;
+		}
+	}
+
+	#descricao{
+		background-color: $green;
+		color: #ffffff;
+
+		h2{
+			padding-bottom: 20px;
+			@include desktop{
+				font-size: 40px;
+			}
+		}
+	}
+
+	#problema{
+		h2{
+			padding-bottom: 20px;
+			@include desktop{
+				font-size: 40px;
+			}
+		}
+	}
+
+	#contato{
+		background-color: #f4f4f4;
+
+		h2{
+			padding-bottom: 20px;
+			@include desktop{
+				font-size: 40px;
+			}
+		}
+
+		form{
+
+			@include desktop{
+				padding-top: 40px;
+			}
+		}
+
+	}
+}

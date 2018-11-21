@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fomenta</title>
+		<link rel="icon" href="images/favicon.ico" type="image/png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body id="cadastro">
+		<nav role ="navigation" class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class= "navbar-toggle" data-toggle= "collapse" data-target = "#navbarCollapse" aria-expanded="false">
+					<span class="sr-only"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse"  id="navbarCollapse">
+					<ul class="nav navbar-nav rolar">
+						<li><a href="index.html">Início</a></li>
+						<li><a href="#descricao">O que é?</a></li>
+						<li><a href="#missao">Nossa missão</a></li>
+						<li><a href="#contato">Contato</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="compens"></div>
+
+		<h1 class="tit">Seu cadastro será como:</h1>
+
+		<section class="escolha">
+				<a href="#" id="button">
+					<div class="tipo-usuario verde" id="grow">
+						<h1>Doador</h1>
+						<form name="sentMessage" id="form">
+	                        <div class="row control-group">
+	                            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                                <label>*Nome</label>
+	                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor, digite seu nome.">
+	                                <p class="help-block text-danger"></p>
+	                            </div>
+	                        </div>
+	                        <div class="row control-group">
+	                            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                                <label>*Email</label>
+	                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor, digite seu email.">
+	                                <p class="help-block text-danger"></p>
+	                            </div>
+	                        </div>
+	                        <div class="row control-group">
+	                            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                                <label>Telefone</label>
+	                                <input type="tel" class="form-control" placeholder="Telefone" id="phone" required data-validation-required-message="Por favor, digite o número de seu telefone..">
+	                                <p class="help-block text-danger"></p>
+	                            </div>
+	                        </div>
+	                        <br>
+	                        <div id="success"></div>
+	                        <div class="row">
+	                            <div class="form-group col-xs-12">
+	                                <button type="submit" class="btn btn-blue btn-lg center-block" style="color: #fff;background-color: #286090;">Enviar</button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+				</a>
+				<a href="#">
+					<div class="tipo-usuario azul">
+						<h1>ONG</h1>
+					</div>
+				</a>
+		</section>
+
+	</body>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script>
+	    $(function() {
+		  var b = $("#button");
+		  var w = $("#grow");
+		  var l = $("#form");
+
+		  w.height(l.outerHeight(false));
+
+		  b.click(function() {
+
+		    if(w.hasClass('open')) {
+		      w.removeClass('open');
+		      w.height(0);
+		      l.hide();
+		    } else {
+		      w.addClass('open');
+		      w.height(l.outerHeight(true));
+		      l.show();
+		    }
+
+		  });
+		});
+	</script>
+}
+
+</html>

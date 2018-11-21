@@ -1,0 +1,22 @@
+@import 'functions/variables';
+@import 'functions/mixins';
+@import 'functions/webfonts';
+
+body {
+	background-color: #ffffff;
+    font-family: $font1;
+    font-size: 17px;
+    color: #000000;
+    overflow-x: hidden;
+
+    .compens{
+    	display: block;
+    	padding-top: 60px;
+    }
+}
+
+
+@import 'parts/menu';
+@import 'parts/main';
+@import 'parts/cadastro';
+@import 'parts/principal';
