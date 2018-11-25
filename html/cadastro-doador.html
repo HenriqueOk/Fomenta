@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fomenta</title>
+		<link rel="icon" href="images/favicon.ico" type="image/png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<nav role ="navigation" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class= "navbar-toggle" data-toggle= "collapse" data-target = "#navbarCollapse" aria-expanded="false">
+						<span class="sr-only"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse"  id="navbarCollapse">
+						<ul class="nav navbar-nav rolar">
+							<li><a href="#inicio">Início</a></li>
+							<li><a href="#descricao">O que é?</a></li>
+							<li><a href="#problema">Problema</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="compens"></div>
+
+		<section class="inicio" id="inicio">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Cadastro de Doador</h2>
+					</div>
+				</div>
+				<form>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="document">Documento</label>
+								<input type="text" name="document" class="form-control" id="document" placeholder="Documento">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="name">Nome</label>
+								<input type="text" name="name" class="form-control" id="name" placeholder="Nome">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" name="email" class="form-control" id="email" placeholder="Email">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="telephone">Telefone</label>
+								<input type="text" name="telephone" class="form-control" id="telephone" placeholder="Telefone">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="address">Endereço</label>
+								<input type="text" name="address" class="form-control" id="address" placeholder="Endereço">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label for="number">Número</label>
+								<input type="number" name="number" class="form-control" id="number" placeholder="Número">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="complement">Complemento</label>
+								<input type="text" name="complement" class="form-control" id="complement" placeholder="Complemento">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="state">Estado</label>
+								<select name="state"  class="form-control" id="state" placeholder="Estado">
+									<option value="AC">Acre</option>
+									<option value="AL">Alagoas</option>
+									<option value="AP">Amapá</option>
+									<option value="AM">Amazonas</option>
+									<option value="BA">Bahia</option>
+									<option value="CE">Ceará</option>
+									<option value="DF">Distrito Federal</option>
+									<option value="ES">Espírito Santo</option>
+									<option value="GO">Goiás</option>
+									<option value="MA">Maranhão</option>
+									<option value="MT">Mato Grosso</option>
+									<option value="MS">Mato Grosso do Sul</option>
+									<option value="MG">Minas Gerais</option>
+									<option value="PA">Pará</option>
+									<option value="PB">Paraíba</option>
+									<option value="PR">Paraná</option>
+									<option value="PE">Pernambuco</option>
+									<option value="PI">Piauí</option>
+									<option value="RJ">Rio de Janeiro</option>
+									<option value="RN">Rio Grande do Norte</option>
+									<option value="RS">Rio Grande do Sul</option>
+									<option value="RO">Rondônia</option>
+									<option value="RR">Roraima</option>
+									<option value="SC">Santa Catarina</option>
+									<option value="SP">São Paulo</option>
+									<option value="SE">Sergipe</option>
+									<option value="TO">Tocantins</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="city">Cidade</label>
+								<input type="text" name="city" class="form-control" id="city" placeholder="Cidade">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="password">Senha</label>
+								<input type="password" name="password" class="form-control" id="password" placeholder="Senha">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="password_confirmation">Confirmação de senha</label>
+								<input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirmação de senha">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-lg btn-success pull-right">Cadastrar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		<div class="clearfix"></div>
+	</body>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script>
+		$('button[type="submit"]').on('click', function(event){
+			event.preventDefault();
+			var addressSearch = $("input#address").val() + ", " + $("input#number").val() + ", " + $("input#city").val() + " - " + $("select#state").val();
+			$.ajax({
+				method: "GET",
+				url: "https://maps.googleapis.com/maps/api/geocode/json",
+				data: {
+					address: addressSearch,
+					key: "AIzaSyDxe7eZp5YW7uNQ5vyZ1TYHuUFi9N3coZk"
+				},
+				success: function(data) {
+					var latitude = data.results[0].geometry.location.lat;
+					var longitude = data.results[0].geometry.location.lng;
+					$.ajax({
+						method: "POST",
+						url: " https://fomenta-api.herokuapp.com/donators",
+						data: {
+							donator: {
+								document: $("input#document").val(),
+								name: $("input#name").val(),
+								email: $("input#email").val(),
+								telephone_number: $("input#telephone").val(),
+								address_street: $("input#address").val(),
+								address_state: $("select#state").val(),
+								address_city: $("input#city").val(),
+								address_complement: $("input#complement").val(),
+								address_number: parseInt($("input#number").val()),
+								latitude: latitude,
+								longitude: longitude
+							},
+							user: {
+								name: $("input#name").val(),
+								email: $("input#email").val(),
+								password: $("input#password").val(),
+								password_confirmation: $("input#password_confirmation").val()
+							}
+						},
+						success: function(data) {
+							localStorage.setItem("token", data.token);
+							localStorage.setItem("type", "donator");
+							window.location = "index.html";
+						}
+					});
+				}
+			})
+
+		});
+	</script>
+</html>
