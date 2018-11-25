@@ -30,6 +30,7 @@
 						<li><a href="#descricao">O que é?</a></li>
 						<li><a href="#problema">Problema</a></li>
 						<li><a href="#contato">Contato</a></li>
+						<li><a href="#logout">Sair</a></li>
 					</ul>
 				</div>
 			</div>
@@ -46,26 +47,28 @@
 					Conectando pessoas, fomentando a vida.
 				</p>
 				<br>
-				<form>
+				<form id="login">
 					<h3>Login</h3>
 					<br>
 				    E-mail:<br>
-					<input type="text" name="firstname">
+					<input type="email" name="email" id="login-email">
 					<br>
 					Senha:
 					<br>
-					<input type="text" name="lastname">
+					<input type="password" name="password" id="login-password">
 					<br>
 					<br>
-					<a href="principal.html">Entrar</a>
+					<button type="submit" class="btn btn-success">Entrar</button>
 				</form>
-				<h3>Ainda não é cadastrado?</h3>
-				<a href="cadastro-doador.html" class="btn btn-primary">
-					Quero doar
-				</a>
-				<a href="cadastro-ong.html" class="btn btn-warning">
-					Sou uma ONG
-				</a>
+				<div id="cadastro">
+					<h3>Ainda não é cadastrado?</h3>
+					<a href="cadastro-doador.html" class="btn btn-primary">
+						Quero doar
+					</a>
+					<a href="cadastro-ong.html" class="btn btn-warning">
+						Sou uma ONG
+					</a>
+				</div>
 			</div>
 		</section>
 		<div class="clearfix"></div>
@@ -151,6 +154,27 @@
 				var deslocamento = $(idElemento).offset().top - $('ul.nav').outerHeight();;
 				$('html, body').animate({ scrollTop: deslocamento }, 'slow');
 			});
+
+			if (localStorage.token) {
+				$("#login").hide();
+				$("#cadastro").hide();
+			}
+
+			$("form#login").on("submit", function(event){
+				event.preventDefault();
+				$.ajax({
+					url: "https://fomenta-api.herokuapp.com/sessions",
+					method: "POST",
+					data: {
+						email: $("#login-email").val(),
+						password: $("#login-password").val()
+					},
+					success: function(data){
+						localStorage.setItem("token", data.token);
+						window.location = "index.html";
+					}
+				})
+			})
 		});
 	</script>
 </html>

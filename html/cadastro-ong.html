@@ -181,7 +181,7 @@
 					var longitude = data.results[0].geometry.location.lng;
 					$.ajax({
 						method: "POST",
-						url: " https://fomenta-api.herokuapp.com/ongs",
+						url: "https://fomenta-api.herokuapp.com/ongs",
 						data: {
 							ong: {
 								cnpj: $("input#cnpj").val(),
