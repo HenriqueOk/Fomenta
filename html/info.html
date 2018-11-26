@@ -16,25 +16,21 @@
 	</head>
 
 	<body id="index">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Fomenta</a>
-				</div>
-				<ul class="nav navbar-nav navbar-left">
-					<li><a href="index.html">Mapa</a></li>
-					<li><a href="#descricao">O que é?</a></li>
-					<li><a href="#problema">Problema</a></li>
-					<li><a href="#contato">Contato</a></li>
-					<li class="show-ong"><a href="lista-pedidos-alimentos.html">Pedidos de alimentos</a></li>
-					<li class="show-donator"><a href="lista-doacoes-alimentos.html">Doações</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="logout"><a href="">Sair</a></li>
-				</ul>
-			</div>
-		</nav>
-
+			<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#">Fomenta</a>
+						</div>
+						<ul class="nav navbar-nav navbar-left">
+							<li class="active"><a href="#">O que é?</a></li>
+							<li><a href="#">Problema</a></li>
+							<li><a href="#">Conta</a></li>							
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+								<li><a href="#">Login</a></li>
+							</ul>
+					</div>
+				</nav>
 		<div class="clearfix"></div>
 		<div class="compens"></div>
 
@@ -47,28 +43,21 @@
 					Conectando pessoas, fomentando a vida.
 				</p>
 				<br>
-				<form id="login">
+				<form>
 					<h3>Login</h3>
 					<br>
 				    E-mail:<br>
-					<input type="email" name="email" id="login-email">
+					<input type="text" name="firstname">
 					<br>
-					Senha:
+					Senha: 
 					<br>
-					<input type="password" name="password" id="login-password">
+					<input type="text" name="lastname">
 					<br>
 					<br>
-					<button type="submit" class="btn btn-success">Entrar</button>
-				</form>
-				<div id="cadastro">
-					<h3>Ainda não é cadastrado?</h3>
-					<a href="cadastro-doador.html" class="btn btn-primary">
-						Quero doar
-					</a>
-					<a href="cadastro-ong.html" class="btn btn-warning">
-						Sou uma ONG
-					</a>
-				</div>
+					<a href="principal.html">Entrar</a>
+				</form> 
+				<h3>Ainda não é cadastrado?</h3>
+				<a href="cadastro.html">Clique aqui e ajude a fomentar esta ideia</a>
 			</div>
 		</section>
 		<div class="clearfix"></div>
@@ -154,23 +143,6 @@
 				var deslocamento = $(idElemento).offset().top - $('ul.nav').outerHeight();;
 				$('html, body').animate({ scrollTop: deslocamento }, 'slow');
 			});
-
-			$("form#login").on("submit", function(event){
-				event.preventDefault();
-				$.ajax({
-					url: "https://fomenta-api.herokuapp.com/sessions",
-					method: "POST",
-					data: {
-						email: $("#login-email").val(),
-						password: $("#login-password").val()
-					},
-					success: function(data){
-						localStorage.setItem("token", data.token);
-						localStorage.setItem("type", data.type);
-						location.reload();
-					}
-				})
-			})
 		});
 	</script>
 </html>
