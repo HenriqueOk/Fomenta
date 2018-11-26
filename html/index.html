@@ -30,7 +30,11 @@
 						<li><a href="#descricao">O que é?</a></li>
 						<li><a href="#problema">Problema</a></li>
 						<li><a href="#contato">Contato</a></li>
-						<li><a href="#logout">Sair</a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li class="show-ong"><a href="lista-pedidos-alimentos.html">Pedidos de alimentos</a></li>
+						<li class="show-donator"><a href="lista-doacoes-alimentos.html">Doações</a></li>
+						<li class="logout"><a href="">Sair</a></li>
 					</ul>
 				</div>
 			</div>
@@ -154,11 +158,6 @@
 				var deslocamento = $(idElemento).offset().top - $('ul.nav').outerHeight();;
 				$('html, body').animate({ scrollTop: deslocamento }, 'slow');
 			});
-
-			if (localStorage.token) {
-				$("#login").hide();
-				$("#cadastro").hide();
-			}
 
 			$("form#login").on("submit", function(event){
 				event.preventDefault();
