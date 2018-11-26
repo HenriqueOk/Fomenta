@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fomenta</title>
+		<link rel="icon" href="images/favicon.ico" type="image/png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body id="index">
+		<nav role ="navigation" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class= "navbar-toggle" data-toggle= "collapse" data-target = "#navbarCollapse" aria-expanded="false">
+						<span class="sr-only"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse"  id="navbarCollapse">
+						<ul class="nav navbar-nav rolar">
+							<li><a href="#inicio">Início</a></li>
+							<li><a href="#descricao">O que é?</a></li>
+							<li><a href="#problema">Problema</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+						<ul class="nav navbar-nav">
+							<li class="show-ong"><a href="lista-pedidos-alimentos.html">Pedidos de alimentos</a></li>
+							<li class="show-donator"><a href="lista-doacoes-alimentos.html">Doações</a></li>
+							<li class="logout"><a href="">Sair</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="compens"></div>
+
+		<section class="inicio" id="inicio">
+			<div class="cab_vol">
+				<h1>Fomenta</h1>
+			</div>
+			<div class="voluntario">
+				<p>
+					Conectando pessoas, fomentando a vida.
+				</p>
+				<br>
+				<form id="login">
+					<h3>Login</h3>
+					<br>
+				    E-mail:<br>
+					<input type="email" name="email" id="login-email">
+					<br>
+					Senha:
+					<br>
+					<input type="password" name="password" id="login-password">
+					<br>
+					<br>
+					<button type="submit" class="btn btn-success">Entrar</button>
+				</form>
+				<div id="cadastro">
+					<h3>Ainda não é cadastrado?</h3>
+					<a href="cadastro-doador.html" class="btn btn-primary">
+						Quero doar
+					</a>
+					<a href="cadastro-ong.html" class="btn btn-warning">
+						Sou uma ONG
+					</a>
+				</div>
+			</div>
+		</section>
+		<div class="clearfix"></div>
+
+		<section class="descricao" id="descricao">
+			<div class="cab">
+				<h2>Nunca foi tão fácil doar e receber comida!</h2>
+				<p>
+				O Fomenta aproxima quem tem comida sobrando com quem precisa dela de<br/> maneira fácil e prática! Um serviço que atua como uma ponte direta entre restaurantes,<br/> supermercados, hoteis, buffets, bares com ONGs para facilitar a doação de alimentos<br/> impróprios para o comercio porém próprios para o consumo.
+				</p>
+			</div>
+		</section>
+
+		<section class="problema" id="problema">
+			<div class="cab">
+				<h2>Problema do mundo todo. Problema de todo mundo.</h2>
+				<p>
+				Você sabia que 30% dos alimentos produzidos no mundo são desperdiçados anualmente?<br/>
+				O mundo inteiro desperdiça por ano 1.3 bilhão de toneladas de alimentos. Isso equivale ao PIB da Suíça, um<br/>
+				dos dez países mais ricos do mundo. Um mundo melhor depende de cada um de nós. A doação de alimentos bons e<br/>
+				pró	prios para consumo contribui para um planeta melhor, mas saudável e humano.
+				</p>
+			</div>
+		</section>
+
+		<section class="contato" id="contato">
+			<div class="cab">
+				<h2>Contato</h2>
+				<div class="row content-row" style="margin-right: 0px;margin-left: 0px;">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>*Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor, digite seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>*Email</label>
+                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor, digite seu email.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Telefone</label>
+                                <input type="tel" class="form-control" placeholder="Telefone" id="phone" required data-validation-required-message="Por favor, digite o número de seu telefone..">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>*Mensagem</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor, digite uma mensagem."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-blue btn-lg center-block" style="color: #fff;background-color: #286090;">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+			</div>
+		</section>
+	</body>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script>
+		$(function(){
+			$(".rolar a").click(function (event) {
+				event.preventDefault();
+				var idElemento = $(this).attr("href");
+				var deslocamento = $(idElemento).offset().top - $('ul.nav').outerHeight();;
+				$('html, body').animate({ scrollTop: deslocamento }, 'slow');
+			});
+
+			$("form#login").on("submit", function(event){
+				event.preventDefault();
+				$.ajax({
+					url: "https://fomenta-api.herokuapp.com/sessions",
+					method: "POST",
+					data: {
+						email: $("#login-email").val(),
+						password: $("#login-password").val()
+					},
+					success: function(data){
+						localStorage.setItem("token", data.token);
+						localStorage.setItem("type", data.type);
+						window.location = "index.html";
+					}
+				})
+			})
+		});
+	</script>
+</html>
