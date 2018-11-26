@@ -195,3 +195,15 @@ body {
         height: 500px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.box {
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.box .food-name {
+  font-size: 23px;
+}

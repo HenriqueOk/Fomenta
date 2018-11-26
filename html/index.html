@@ -171,6 +171,7 @@
 					},
 					success: function(data){
 						localStorage.setItem("token", data.token);
+						localStorage.setItem("type", data.type);
 						window.location = "index.html";
 					}
 				})

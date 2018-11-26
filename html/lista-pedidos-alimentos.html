@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fomenta</title>
+		<link rel="icon" href="images/favicon.ico" type="image/png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<nav role ="navigation" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class= "navbar-toggle" data-toggle= "collapse" data-target = "#navbarCollapse" aria-expanded="false">
+						<span class="sr-only"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse"  id="navbarCollapse">
+						<ul class="nav navbar-nav rolar">
+							<li><a href="#inicio">Início</a></li>
+							<li><a href="#descricao">O que é?</a></li>
+							<li><a href="#problema">Problema</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="compens"></div>
+
+		<section class="inicio" id="inicio">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h2>Pedidos de Alimentos</h2>
+					</div>
+					<div class="col-md-4">
+						<a href="cadastro-pedido-alimento.html" class="btn btn-success pull-right" style="margin-top: 15px;">Criar pedido</a>
+					</div>
+				</div>
+				<div class="row pedidos-alimentos">
+				</div>
+			</div>
+		</section>
+		<div class="clearfix"></div>
+	</body>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script>
+			if (localStorage.type != "ong") {
+				window.location = "index.html";
+			}
+
+			$.ajax({
+				method: "GET",
+				url: "https://fomenta-api.herokuapp.com/food_requests",
+				headers: { Authorization: localStorage.token },
+				success: function (data) {
+					var foodRequestsList = $(".pedidos-alimentos");
+					data.forEach(function (foodRequest) {
+						foodRequestsList.append(
+							'<div class="col-md-3">'+
+								'<div class= "box">' +
+									'<div class="food-name">' +
+										foodRequest.food_name +
+									'<a class="fa fa-trash delete-food-request pull-right" data-food-request-id="'+ foodRequest.id +'"></a>' +
+								'</div>' +
+							'<div class="food-type">' + foodRequest.food_type_name + '</div>' +
+						'</div >')
+					});
+
+					$(".delete-food-request").on("click", function(event){
+						console.log(event);
+						var requestId = $(event.target).data("food-request-id");
+						$.ajax({
+							method: "DELETE",
+							url: "https://fomenta-api.herokuapp.com/food_requests/" + requestId,
+							headers: { Authorization: localStorage.token },
+							success: function (data) {
+								window.location = "lista-pedidos-alimentos.html";
+							}
+						})
+					});
+				}
+			})
+	</script>
+</html>
