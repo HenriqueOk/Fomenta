@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fomenta</title>
+		<link rel="icon" href="images/favicon.ico" type="image/png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<nav role ="navigation" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class= "navbar-toggle" data-toggle= "collapse" data-target = "#navbarCollapse" aria-expanded="false">
+						<span class="sr-only"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse"  id="navbarCollapse">
+						<ul class="nav navbar-nav rolar">
+							<li><a href="#inicio">Início</a></li>
+							<li><a href="#descricao">O que é?</a></li>
+							<li><a href="#problema">Problema</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="compens"></div>
+
+		<section class="inicio" id="inicio">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Criar doação</h2>
+					</div>
+				</div>
+				<form>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="food_name">Nome do alimento</label>
+								<input type="text" name="food_name" class="form-control" id="food_name" placeholder="Nome do alimento">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="food_type_id">Tipo de alimento</label>
+								<select name="food_type_id"  class="form-control" id="food_type_id" placeholder="Tipo de alimento">
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-lg btn-success pull-right" style="margin-top: 15px;">Cadastrar</button>
+						</div>
+					</div>
+					<div class="row">
+					</div>
+				</form>
+			</div>
+		</section>
+		<div class="clearfix"></div>
+	</body>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+	<script>
+		if (localStorage.type != "donator") {
+			window.location = "index.html";
+		}
+
+		$.ajax({
+			method: "GET",
+			url: "https://fomenta-api.herokuapp.com/food_types",
+			success: function(data){
+				var foodTypeSelect = $("select#food_type_id");
+				data.forEach(function(foodType) {
+					foodTypeSelect.append("<option value='" + foodType.id + "'>"+ foodType.name +"</option>")
+				});
+			}
+		})
+
+
+		$('button[type="submit"]').on('click', function(event){
+			event.preventDefault();
+			$.ajax({
+				method: "POST",
+				url: "https://fomenta-api.herokuapp.com/food_donations",
+				headers: { Authorization: localStorage.token },
+				data: {
+					food_donation: {
+						food_name: $("input#food_name").val(),
+						food_type_id: parseInt($("select#food_type_id").val())
+					}
+				},
+				success: function(data) {
+					window.location = "lista-doacoes-alimentos.html";
+				}
+			});
+		});
+	</script>
+</html>
