@@ -19,19 +19,27 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Fomenta</a>
+		           <a class="navbar-brand" href="#">Fomenta</a>
+		           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		              <span class="sr-only">Toggle navigation</span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+		           </button>
+		        </div>
+		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="index.html">Mapa</a></li>
+						<li><a href="landing.html#descricao">O que é?</a></li>
+						<li><a href="landing.html#problema">Problema</a></li>
+						<li><a href="landing.html#contato">Contato</a></li>
+						<li class="show-ong active"><a href="lista-pedidos-alimentos.html">Pedidos de alimentos</a></li>
+						<li class="show-donator"><a href="lista-doacoes-alimentos.html">Doações</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="logout"><a href="">Sair</a></li>
+					</ul>
 				</div>
-				<ul class="nav navbar-nav navbar-left">
-					<li><a href="index.html">Mapa</a></li>
-					<li><a href="#descricao">O que é?</a></li>
-					<li><a href="#problema">Problema</a></li>
-					<li><a href="#contato">Contato</a></li>
-					<li class="show-ong"><a href="lista-pedidos-alimentos.html">Pedidos de alimentos</a></li>
-					<li class="show-donator"><a href="lista-doacoes-alimentos.html">Doações</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="logout"><a href="">Sair</a></li>
-				</ul>
 			</div>
 		</nav>
 
@@ -39,50 +47,56 @@
 		<div class="compens"></div>
 
 		<section class="inicio" id="inicio">
-			<div class="cab_vol">
-				<h1>Fomenta</h1>
-			</div>
-			<div class="voluntario">
-				<p>
-					Conectando pessoas, fomentando a vida.
-				</p>
-				<br>
-				<form id="login">
-					<h3>Login</h3>
+			<div class="container">
+				<div class="cab_vol">
+					<h1>Fomenta</h1>
+				</div>
+				<div class="voluntario">
+
+					<p>
+						Conectando pessoas, fomentando a vida.
+					</p>
 					<br>
-				    E-mail:<br>
-					<input type="email" name="email" id="login-email">
-					<br>
-					Senha:
-					<br>
-					<input type="password" name="password" id="login-password">
-					<br>
-					<br>
-					<button type="submit" class="btn btn-success">Entrar</button>
-				</form>
-				<div id="cadastro">
-					<h3>Ainda não é cadastrado?</h3>
-					<a href="cadastro-doador.html" class="btn btn-primary">
-						Quero doar
-					</a>
-					<a href="cadastro-ong.html" class="btn btn-warning">
-						Sou uma ONG
-					</a>
+					<form id="login">
+						<h3>Login</h3>
+						<br>
+					    E-mail:<br>
+						<input type="email" name="email" id="login-email">
+						<br>
+						Senha:
+						<br>
+						<input type="password" name="password" id="login-password">
+						<br>
+						<br>
+						<button type="submit" class="btn btn-success">Entrar</button>
+					</form>
+					<div id="cadastro">
+						<h3>Ainda não é cadastrado?</h3>
+						<a href="cadastro-doador.html" class="btn btn-primary">
+							Quero doar
+						</a>
+						<a href="cadastro-ong.html" class="btn btn-warning">
+							Sou uma ONG
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
 		<div class="clearfix"></div>
 
 		<section class="descricao" id="descricao">
+			<div class="container">
 			<div class="cab">
 				<h2>Nunca foi tão fácil doar e receber comida!</h2>
 				<p>
 				O Fomenta aproxima quem tem comida sobrando com quem precisa dela de<br/> maneira fácil e prática! Um serviço que atua como uma ponte direta entre restaurantes,<br/> supermercados, hoteis, buffets, bares com ONGs para facilitar a doação de alimentos<br/> impróprios para o comercio porém próprios para o consumo.
 				</p>
 			</div>
+		</div>
 		</section>
 
 		<section class="problema" id="problema">
+			<div class="container">
 			<div class="cab">
 				<h2>Problema do mundo todo. Problema de todo mundo.</h2>
 				<p>
@@ -92,9 +106,11 @@
 				pró	prios para consumo contribui para um planeta melhor, mas saudável e humano.
 				</p>
 			</div>
+		</div>
 		</section>
 
 		<section class="contato" id="contato">
+			<div class="container">
 			<div class="cab">
 				<h2>Contato</h2>
 				<div class="row content-row" style="margin-right: 0px;margin-left: 0px;">
@@ -138,6 +154,7 @@
                     </form>
                 </div>
 			</div>
+		</div>
 		</section>
 	</body>
 
