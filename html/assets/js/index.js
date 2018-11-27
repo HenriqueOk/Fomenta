@@ -1,25 +1,13 @@
 var map;
 
-var contentString = '<div id="content">' +
-	'<div id="siteNotice">' +
-	'</div>' +
-	'<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-	'<div id="bodyContent">' +
-	'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-	'sandstone rock formation in the southern part of the ' +
-	'Northern Territory, central Australia. It lies 335 km (208 mi) ' +
-	'south west of the nearest large town, Alice Springs; 450 km ' +
-	'(280 mi) by road. Kata Tjuta and Uluru are the two major ' +
-	'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-	'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-	'Aboriginal people of the area. It has many springs, waterholes, ' +
-	'rock caves and ancient paintings. Uluru is listed as a World ' +
-	'Heritage Site.</p>' +
-	'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-	'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-	'(last visited June 22, 2009).</p>' +
-	'</div>' +
-	'</div>';
+var contentStringName = '<div id="content"><div id="siteNotice"></div><h1 id="firstHeading" class="firstHeading">';
+var contentStringType = '</h1><div id="bodyContent"><p><b>Tipo: </b>';
+var contentStringFoodTypes = '<br><b>Tipo de alimentos: </b>';
+var contentStringEmail = '<br><b>Endereço de e-mail: </b>';
+var contentStringTelephoneNumber = '<br><b>Número de telefone: </b>';
+var contentStringAddress = '<br><b>Endereço: </b>';
+var contentStringEnd = '</div></div>';
+	
 
 var name = "";
 var showDonators = true;
@@ -132,6 +120,21 @@ function initAutocomplete() {
 }
 
 function mountWindow(feature) {
+
+	var contentString;
+	contentString += contentStringName;
+	contentString += feature.name;
+	contentString += contentStringType;
+	contentString += feature.type == 'donator' ? "Doador" : "ONG";
+	contentString += contentStringFoodTypes;
+	contentString += feature.foods;
+	contentString += contentStringEmail;
+	contentString += feature.email;
+	contentString += contentStringTelephoneNumber;
+	contentString += feature.telephone_number;
+	contentString += contentStringAddress;
+	contentString += feature.address_street + ',' + feature.address_number + ' - ' + feature.address_complement + '. ' + feature.address_city + ", " + feature.address_state;
+	contentString += contentStringEnd;
 
 	return contentString;
 }

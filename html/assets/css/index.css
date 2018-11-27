@@ -199,16 +199,23 @@ form.search-user::after {
 }
 
 .toggle-filter-user {
-	display: inline-block;
-	width: 35%;
-padding: 8px;
-background: #6ab04c;
-color: white;
-font-size: 17px;
-	border: 1px solid grey;
-border-left: none;
-	cursor: pointer;
-	margin-top: 5%;
+		display: inline-block;
+		width: 35%;
+		padding: 8px;
+		color: white;
+		font-size: 17px;
+		border: 1px solid grey;
+		border-left: none;
+		cursor: pointer;
+		margin-top: 5%;
+}
+
+.toggle-filter-user-disabled {
+	background: #6ab04c;
+}
+
+.toggle-filter-user-enabled {
+	background: #b04c4c;
 }
 
 .toggle-filter-user:focus {
@@ -232,4 +239,8 @@ border-left: none;
 .chosen-search-input {
 	font-size: 17px !important;
 	font-family: Roboto !important;
+}
+
+.chosen {
+	font-family: Roboto;
 }
